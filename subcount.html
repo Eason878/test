@@ -1,0 +1,38 @@
+<head>
+    <title>Live Subscriber Count</title>
+    <meta name="description" content="Subscriber Count">
+    <link rel="stylesheet" href="odometer.css">
+    <link rel="stylesheet" href="embed_profile.css">
+    <script src="odometer.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <img id="image">
+    <span id="title"></span>
+    <span id="count" class="odometer"></span>
+</body>
+<center>
+<script>
+    var channel = window.location.href.split('?')[1] || '';
+    function stats(chanid){
+        fetch('https://api-v6.mixerno.space/youtube-channel-counter/live/'+chanid).then(res => res.json()).then(data=>{
+            image.src=data.profile_picture
+            title.innerHTML=data.name
+            count.innerHTML=data.subscribers
+        })
+    }
+    setInterval(() => {
+    stats(channel)
+}, 2000)
+stats(channel)
+</script>
+</center>
+
+<style>
+    script{
+        font-family: 'Trebuchet MS';
+        font-weight: 700;
+    }
+</style>

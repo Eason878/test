@@ -1,0 +1,34 @@
+#image {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+
+}
+#title {
+    position: absolute;
+    top: 5px;
+    left: 105px;
+    font-size: 25px;
+    width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: roboto;
+    color: #fff;
+    text-overflow: ellipsis;
+}
+#count {
+    position: absolute;
+    top: 38px;
+    left: 105px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+}
+body {
+    background-color:#181818;
+    font-family: roboto;
+    font-weight: 500;
+}    
